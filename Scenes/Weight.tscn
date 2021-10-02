@@ -4,7 +4,6 @@
 [ext_resource path="res://Scripts/Weight.gd" type="Script" id=2]
 
 [node name="Weight" type="Node2D"]
-position = Vector2( 430, 0 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
