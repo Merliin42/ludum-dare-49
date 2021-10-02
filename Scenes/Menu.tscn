@@ -26,10 +26,10 @@ __meta__ = {
 }
 
 [node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer"]
-margin_left = 491.0
-margin_top = 274.0
-margin_right = 532.0
-margin_bottom = 326.0
+margin_left = 939.0
+margin_top = 514.0
+margin_right = 980.0
+margin_bottom = 566.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 __meta__ = {
