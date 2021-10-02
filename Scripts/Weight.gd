@@ -1,5 +1,5 @@
 extends Node2D
 
 
-export var weight : int = 100
+export var weight : int = 10
 

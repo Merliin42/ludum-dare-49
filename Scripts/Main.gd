@@ -15,10 +15,11 @@ func _ready():
 
 func _process(delta):
 	var player_input : float = get_input()
-	balance += (weights[0] + weights[1]) * delta
-	balance += player_input * delta * 1000
+	balance = (balance + (weights[0] + weights[1] + (player_input*200)) * delta) * 1.02
+	
+	print(balance)
 	$Sprite.position.x = balance
-#	print(balance)
+	$HUD.update(balance)
 
 func get_input():
 	var left : float
@@ -31,8 +32,6 @@ func get_input():
 
 
 func _on_Timer_timeout():
-	
-#	var index : int = randi() % 3
 	var side : int = randi() % 2
 	var new_position : int = right_left[side]
 	var weight := object_weight.instance()
@@ -42,5 +41,4 @@ func _on_Timer_timeout():
 	weight.weight *= new_position
 	weights[side] += weight.weight
 	counter[side] += 1
-	print(counter)
 	add_child(weight)

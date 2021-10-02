@@ -1,23 +1,40 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Assets/formes/cadre_fleche.png" type="Texture" id=1]
-[ext_resource path="res://Assets/formes/cadre_equilibre.png" type="Texture" id=2]
+[ext_resource path="res://Assets/formes/cadre_left.png" type="Texture" id=1]
+[ext_resource path="res://Assets/formes/cadre_background_left.png" type="Texture" id=2]
+[ext_resource path="res://Assets/formes/cadre_background_right.png" type="Texture" id=3]
+[ext_resource path="res://Assets/formes/cadre_right.png" type="Texture" id=4]
+[ext_resource path="res://Assets/formes/cadre_equilibre_layer_right.png" type="Texture" id=5]
+[ext_resource path="res://Assets/formes/cadre_equilibre_layer_left.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/HUD.gd" type="Script" id=7]
 
-[node name="HUD" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 7 )
 
-[node name="ProgressBar" type="TextureProgress" parent="."]
+[node name="EquilibriumBar" type="HSplitContainer" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -960.0
-margin_right = 960.0
-margin_bottom = 1080.0
-texture_under = ExtResource( 2 )
-texture_progress = ExtResource( 1 )
+margin_left = -320.0
+margin_right = 320.0
+margin_bottom = 300.0
+collapsed = true
+dragger_visibility = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Left" type="TextureProgress" parent="EquilibriumBar"]
+margin_right = 320.0
+margin_bottom = 300.0
+texture_under = ExtResource( 2 )
+texture_over = ExtResource( 1 )
+texture_progress = ExtResource( 6 )
+fill_mode = 1
+
+[node name="Right" type="TextureProgress" parent="EquilibriumBar"]
+margin_left = 320.0
+margin_right = 640.0
+margin_bottom = 300.0
+texture_under = ExtResource( 3 )
+texture_over = ExtResource( 4 )
+texture_progress = ExtResource( 5 )
