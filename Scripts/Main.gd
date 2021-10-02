@@ -16,7 +16,9 @@ func _ready():
 
 func _process(delta):
 	var player_input : float = get_input()
-	balance = (balance + (weights[1] - weights[0] + (player_input*200)) * delta) * 1.02
+
+	balance = (balance + (weights[0] + weights[1] + (player_input*500)) * delta) * 1.02
+
 	
 	print(balance)
 	$Sprite.position.x = balance
