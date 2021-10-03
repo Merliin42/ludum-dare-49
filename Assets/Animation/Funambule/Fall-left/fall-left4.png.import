@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bird7.png-fced86d6dca8d12ff7ed8d4fab59b865.stex"
+path="res://.import/fall-left4.png-2ecd408fb80e96fb246befde95bc7d26.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/bird7.png"
-dest_files=[ "res://.import/bird7.png-fced86d6dca8d12ff7ed8d4fab59b865.stex" ]
+source_file="res://Assets/Animation/Funambule/Fall-left/fall-left4.png"
+dest_files=[ "res://.import/fall-left4.png-2ecd408fb80e96fb246befde95bc7d26.stex" ]
 
 [params]
 
