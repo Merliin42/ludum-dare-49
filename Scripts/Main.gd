@@ -43,6 +43,9 @@ func _on_Timer_timeout():
 	weight.position.y -= lines[index].counter * 64
 	weight.side = side
 	weight.connect("on_landing", self, "on_bird_landing")
+	$BirdAudio.pitch_scale = 1 + rand_range(-0.5, 0.5)
+	print($BirdAudio.pitch_scale)
+	$BirdAudio.play()
 	lines[index].add_child(weight)
 
 func on_bird_landing(weight) :
