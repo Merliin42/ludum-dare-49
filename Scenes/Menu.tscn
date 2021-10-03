@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Menu/play.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Menu/quit_pressed.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Menu/quit.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Menu/play_pressed.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Menu/quit_hover.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Menu/play_hover.png" type="Texture" id=7]
+[ext_resource path="res://Assets/fond montagnes.png" type="Texture" id=8]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -13,6 +16,11 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 8 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchor_right = 1.0
@@ -49,6 +57,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 7 )
 
 [node name="Quit" type="TextureButton" parent="MarginContainer/VSplitContainer"]
 margin_top = 200.0
@@ -58,6 +67,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource( 4 )
 texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 6 )
 
 [connection signal="pressed" from="MarginContainer/VSplitContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="MarginContainer/VSplitContainer/Quit" to="." method="_on_Quit_pressed"]
