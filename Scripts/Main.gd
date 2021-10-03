@@ -45,7 +45,7 @@ func _on_Timer_timeout():
 	weight.side = side
 	weight.connect("on_landing", self, "on_bird_landing")
 	$BirdAudio.pitch_scale = 1 + rand_range(-0.5, 0.5)
-	print($BirdAudio.pitch_scale)
+#	print($BirdAudio.pitch_scale)
 	$BirdAudio.play()
 	lines[index].add_child(weight)
 
