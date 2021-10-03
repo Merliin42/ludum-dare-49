@@ -17,12 +17,11 @@ func _ready():
 func _process(delta):
 	var player_input : float = get_input()
 
-	balance = (balance + (weights[0] + weights[1] + (player_input*500)) * delta) * 1.02
-
-	
-	print(balance)
+	balance = (balance + (weights[1] - weights[0] + (player_input*50)) * delta) * 1.02
 	$Sprite.position.x = balance
 	$HUD.update(balance)
+	
+	$Camera2D.zoom += Vector2(0.015 * delta, 0.015 * delta)
 
 func get_input():
 	var left : float
@@ -36,11 +35,13 @@ func get_input():
 
 func _on_Timer_timeout():
 	var side : int = randi() % 2
-	var weight := object_weight.instance()
+	var weight : = object_weight.instance()
 	
-	var index : int = randi()%3 if side == 0 else randi()%3+3
+	var index : int = randi() % 3 if side == 0 else randi() % 3 + 3
+	
 	lines[index].counter +=1
 	weight.position.y -= lines[index].counter * 64
 	weights[side] += weight.weight
+	
 	counter[side] += 1
 	lines[index].add_child(weight)
