@@ -10,5 +10,5 @@ func _ready():
 	
 
 func _on_Tween_tween_completed(object, key):
-	$AnimatedSprite.stop()
+	$AnimatedSprite.play("bird_still")
 	emit_signal("on_landing", self)

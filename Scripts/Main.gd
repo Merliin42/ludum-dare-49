@@ -41,7 +41,7 @@ func _on_Timer_timeout():
 	var index : int = randi() % 3 if side == 0 else randi() % 3 + 3
 	
 	lines[index].counter +=1
-	weight.position.y -= lines[index].counter * 64
+	weight.position.y -= lines[index].counter * 64 - 50
 	weight.side = side
 	weight.connect("on_landing", self, "on_bird_landing")
 	$BirdAudio.pitch_scale = 1 + rand_range(-0.5, 0.5)
