@@ -12,13 +12,14 @@ onready var lines : Array = [$Node_Oiseau/Line, $Node_Oiseau/Line2, $Node_Oiseau
 var object_weight := preload("res://Scenes/Weights/Bird.tscn")
 
 func _ready():
+	$AnimationPlayer.play("fall-left")
 	randomize()
 
 func _process(delta):
 	var player_input : float = get_input()
 
 	balance = (balance + (weights[1] - weights[0] + (player_input*50)) * delta) * 1.02
-	$Sprite.position.x = balance
+#	$Sprite.position.x = balance
 	$HUD.update(balance)
 	
 	$Camera2D.zoom += Vector2(0.015 * delta, 0.015 * delta)
