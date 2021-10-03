@@ -9,7 +9,7 @@ var counter : Array = [0, 0] # Counter of objects on the pole
 
 onready var lines : Array = [$Node_Oiseau/Line, $Node_Oiseau/Line2, $Node_Oiseau/Line3, $Node_Oiseau/Line4, $Node_Oiseau/Line5, $Node_Oiseau/Line6]
 
-var object_weight := preload("res://Scenes/Weight.tscn")
+var object_weight := preload("res://Scenes/Weights/Bird.tscn")
 
 func _ready():
 	randomize()
@@ -41,7 +41,10 @@ func _on_Timer_timeout():
 	
 	lines[index].counter +=1
 	weight.position.y -= lines[index].counter * 64
-	weights[side] += weight.weight
-	
-	counter[side] += 1
+	weight.side = side
+	weight.connect("on_landing", self, "on_bird_landing")
 	lines[index].add_child(weight)
+
+func on_bird_landing(weight) :
+	weights[weight.side] += weight.weight
+	counter[weight.side] += 1
