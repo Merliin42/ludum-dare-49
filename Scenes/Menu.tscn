@@ -30,10 +30,10 @@ __meta__ = {
 }
 
 [node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer"]
-margin_left = 761.0
-margin_top = 259.0
-margin_right = 1159.0
-margin_bottom = 821.0
+margin_left = 760.0
+margin_top = 340.0
+margin_right = 1160.0
+margin_bottom = 740.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 collapsed = true
@@ -43,18 +43,17 @@ __meta__ = {
 }
 
 [node name="Start" type="TextureButton" parent="MarginContainer/VSplitContainer"]
-margin_right = 398.0
-margin_bottom = 384.0
+margin_right = 400.0
+margin_bottom = 200.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource( 2 )
 texture_pressed = ExtResource( 5 )
 
 [node name="Quit" type="TextureButton" parent="MarginContainer/VSplitContainer"]
-margin_left = 28.0
-margin_top = 384.0
-margin_right = 370.0
-margin_bottom = 562.0
+margin_top = 200.0
+margin_right = 400.0
+margin_bottom = 400.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource( 4 )

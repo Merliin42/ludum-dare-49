@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/poids_forme_2.png-9f86439317aca1740a1298c5bde83e37.stex"
+path="res://.import/play_hover.png-d5de47290a02b7e8930e6ea29ac418a2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/formes/poids_forme_2.png"
-dest_files=[ "res://.import/poids_forme_2.png-9f86439317aca1740a1298c5bde83e37.stex" ]
+source_file="res://Assets/Menu/play_hover.png"
+dest_files=[ "res://.import/play_hover.png-d5de47290a02b7e8930e6ea29ac418a2.stex" ]
 
 [params]
 

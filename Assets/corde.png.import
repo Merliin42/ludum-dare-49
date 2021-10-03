@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/poids_forme_1.png-0df25448825f58b485a9eacc20a0e56f.stex"
+path="res://.import/corde.png-e58e54e23e8a993d81475946d70d02ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/formes/poids_forme_1.png"
-dest_files=[ "res://.import/poids_forme_1.png-0df25448825f58b485a9eacc20a0e56f.stex" ]
+source_file="res://Assets/corde.png"
+dest_files=[ "res://.import/corde.png-e58e54e23e8a993d81475946d70d02ca.stex" ]
 
 [params]
 
