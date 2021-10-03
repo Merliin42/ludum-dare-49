@@ -11,7 +11,7 @@
 [ext_resource path="res://Assets/Animation/Funambule/Fall-left/fall-left2.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Animation/Funambule/Fall-left/fall-left1.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Animation/Funambule/Fall-left/fall-left7.png" type="Texture" id=11]
-[ext_resource path="res://Assets/fond montagnes.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Sounds/funambule v3.wav" type="AudioStream" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -116,16 +116,7 @@ script = ExtResource( 2 )
 
 [node name="HUD" parent="." instance=ExtResource( 3 )]
 
-[node name="Background" type="CanvasLayer" parent="."]
-layer = -1
-
-[node name="TextureRect" type="TextureRect" parent="Background"]
-margin_right = 40.0
-margin_bottom = 40.0
-texture = ExtResource( 12 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Background" parent="." instance=ExtResource( 12 )]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
