@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cadre_left.png-bd6a57269f49ba6eb55cd8879b5ccc44.stex"
+path="res://.import/cadre_left.png-605feb15be470f904fb6c72c4d329fd2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/formes/cadre_left.png"
-dest_files=[ "res://.import/cadre_left.png-bd6a57269f49ba6eb55cd8879b5ccc44.stex" ]
+source_file="res://Assets/HUD/cadre_left.png"
+dest_files=[ "res://.import/cadre_left.png-605feb15be470f904fb6c72c4d329fd2.stex" ]
 
 [params]
 

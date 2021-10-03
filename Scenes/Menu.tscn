@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Menu/play.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Menu/quit_pressed.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Menu/quit.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Menu/play_pressed.png" type="Texture" id=5]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -26,30 +30,35 @@ __meta__ = {
 }
 
 [node name="VSplitContainer" type="VSplitContainer" parent="MarginContainer"]
-margin_left = 939.0
-margin_top = 514.0
-margin_right = 980.0
-margin_bottom = 566.0
+margin_left = 761.0
+margin_top = 259.0
+margin_right = 1159.0
+margin_bottom = 821.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+collapsed = true
+dragger_visibility = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Start" type="Button" parent="MarginContainer/VSplitContainer"]
-margin_right = 41.0
-margin_bottom = 20.0
+[node name="Start" type="TextureButton" parent="MarginContainer/VSplitContainer"]
+margin_right = 398.0
+margin_bottom = 384.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Start"
+texture_normal = ExtResource( 2 )
+texture_pressed = ExtResource( 5 )
 
-[node name="Quit" type="Button" parent="MarginContainer/VSplitContainer"]
-margin_top = 32.0
-margin_right = 40.0
-margin_bottom = 52.0
+[node name="Quit" type="TextureButton" parent="MarginContainer/VSplitContainer"]
+margin_left = 28.0
+margin_top = 384.0
+margin_right = 370.0
+margin_bottom = 562.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-text = "Quit"
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 3 )
 
 [connection signal="pressed" from="MarginContainer/VSplitContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="MarginContainer/VSplitContainer/Quit" to="." method="_on_Quit_pressed"]

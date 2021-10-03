@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cadre_equilibre_layer_right.png-cd55786f7d414f89cc95f4b194b1012c.stex"
+path="res://.import/quit_pressed.png-779d5fd7afbd530cfb4d9b1a674de224.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/formes/cadre_equilibre_layer_right.png"
-dest_files=[ "res://.import/cadre_equilibre_layer_right.png-cd55786f7d414f89cc95f4b194b1012c.stex" ]
+source_file="res://Assets/Menu/quit_pressed.png"
+dest_files=[ "res://.import/quit_pressed.png-779d5fd7afbd530cfb4d9b1a674de224.stex" ]
 
 [params]
 
