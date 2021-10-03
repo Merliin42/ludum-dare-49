@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Assets/Animation/Funambule/Fall-left/fall-left5.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
@@ -11,6 +11,8 @@
 [ext_resource path="res://Assets/Animation/Funambule/Fall-left/fall-left2.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Animation/Funambule/Fall-left/fall-left1.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Animation/Funambule/Fall-left/fall-left7.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Animation/Funambule/Fall_left_2/fall-left2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Animation/Funambule/Fall_left_2/fall-left1.png" type="Texture" id=13]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -18,6 +20,11 @@ animations = [ {
 "loop": true,
 "name": "fall_left",
 "speed": 12.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "fall_left_2",
+"speed": 5.0
 } ]
 
 [sub_resource type="Animation" id=2]
@@ -109,6 +116,107 @@ tracks/6/keys = {
 "values": [ Vector2( 420, -177 ), Vector2( 420, -160 ), Vector2( 415, -148 ), Vector2( 370, -156 ), Vector2( 407, -180 ), Vector2( 415, -197 ), Vector2( 420, -181 ) ]
 }
 
+[sub_resource type="Animation" id=3]
+resource_name = "fall-left-2"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Node_Oiseau/Line:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( -370, -50 ), Vector2( -370, -70 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Node_Oiseau/Line2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( -280, -80 ), Vector2( -280, -90 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Node_Oiseau/Line3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( -200, -100 ), Vector2( -200, -103 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Node_Oiseau/Line4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 150, -200 ), Vector2( 150, -174 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Node_Oiseau/Line5:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 250, -226 ), Vector2( 250, -194 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Node_Oiseau/Line6:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 340, -250 ), Vector2( 340, -213 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("AnimatedSprite:animation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "fall_left_2" ]
+}
+
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -116,7 +224,7 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
-animation = "fall_left"
+animation = "fall_left_2"
 frame = 1
 __meta__ = {
 "_edit_lock_": true
@@ -150,6 +258,7 @@ position = Vector2( 420, -160 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/fall-left = SubResource( 2 )
+anims/fall-left-2 = SubResource( 3 )
 
 [node name="BirdAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 5 )
