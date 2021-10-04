@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+#export var opacity = func()
 
 func update(balance) :
 	var left : float = 0

@@ -8,12 +8,10 @@
 [ext_resource path="res://Assets/HUD/cadre_equilibre_layer_left.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=7]
 
-
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource( 7 )
 
 [node name="EquilibriumBar" type="HSplitContainer" parent="."]
-modulate = Color( 1, 1, 1, 0.501961 )
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -640.0
