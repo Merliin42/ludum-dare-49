@@ -133,6 +133,9 @@ current = true
 autostart = true
 
 [node name="Node_Oiseau" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Line" parent="Node_Oiseau" instance=ExtResource( 4 )]
 position = Vector2( -430, -75 )

@@ -22,6 +22,9 @@ func _process(delta):
 #	$Sprite.position.x = balance
 	$HUD.update(balance)
 	
+	if(balance < -100 or balance > 100) :
+		get_tree().change_scene("res://Scenes/Menu.tscn")
+	
 	$Camera2D.zoom += Vector2(0.015 * delta, 0.015 * delta)
 
 func get_input():
