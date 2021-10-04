@@ -181,6 +181,7 @@ position = Vector2( 320, -164 )
 position = Vector2( 420, -177 )
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
 autostart = true
 
 [node name="CharacterAnimation" type="AnimationPlayer" parent="."]

@@ -5,7 +5,7 @@ export var weight : int = 1
 var side : int = 0
 
 func _ready():
-	$Tween.interpolate_property(self, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 1, Tween.TRANS_LINEAR)
+	$Tween.interpolate_property(self, "modulate", Color(1, 1, 1, 0), Color(1, 1, 1, 1), 2, Tween.TRANS_LINEAR)
 	$Tween.start()
 	
 
