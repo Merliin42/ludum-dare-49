@@ -12,18 +12,18 @@ onready var lines : Array = [$Node_Oiseau/Line, $Node_Oiseau/Line2, $Node_Oiseau
 var object_weight := preload("res://Scenes/Weights/Bird.tscn")
 
 func _ready():
-	$AnimationPlayer.play("fall-left")
+	$CameraAnimation.play("pan_in")
+	$CharacterAnimation.play("fall-left")
 	randomize()
 
 func _process(delta):
 	var player_input : float = get_input()
 
 	balance = (balance + (weights[1] - weights[0] + (player_input*50)) * delta) * 1.02
-#	$Sprite.position.x = balance
 	$HUD.update(balance)
 	
 	if(balance < -100 or balance > 100) :
-		get_tree().change_scene("res://Scenes/Menu.tscn")
+		$CameraAnimation.play("pan_out")
 	
 	$Camera2D.zoom += Vector2(0.015 * delta, 0.015 * delta)
 
@@ -55,3 +55,8 @@ func _on_Timer_timeout():
 func on_bird_landing(weight) :
 	weights[weight.side] += weight.weight
 	counter[weight.side] += 1
+
+
+func _on_CameraAnimation_animation_finished(anim_name):
+	if anim_name == "pan_out" :
+		get_tree().change_scene("res://Scenes/Menu.tscn")

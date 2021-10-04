@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Menu/play.png" type="Texture" id=2]
@@ -8,6 +8,38 @@
 [ext_resource path="res://Assets/Menu/quit_hover.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Menu/play_hover.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Background.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Animation" id=1]
+resource_name = "pan_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2880, 540 ), Vector2( 960, 540 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "pan_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 960, 540 ), Vector2( 2880, 540 ) ]
+}
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -66,5 +98,14 @@ texture_hover = ExtResource( 6 )
 
 [node name="Background" parent="." instance=ExtResource( 8 )]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 2880, 540 )
+current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/pan_in = SubResource( 1 )
+anims/pan_out = SubResource( 2 )
+
 [connection signal="pressed" from="MarginContainer/VSplitContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="MarginContainer/VSplitContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
