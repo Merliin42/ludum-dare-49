@@ -10,9 +10,10 @@ config_version=4
 
 [application]
 
-config/name="Ludum-Dare-49"
-run/main_scene="res://Scenes/Main.tscn"
-config/icon="res://icon.png"
+config/name="Birds"
+run/main_scene="res://Scenes/Menu.tscn"
+boot_splash/image="res://fond montagnes.png"
+config/icon="res://Bird immobile.png"
 
 [display]
 

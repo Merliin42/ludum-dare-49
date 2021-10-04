@@ -151,7 +151,7 @@ script = ExtResource( 2 )
 [node name="Background" parent="." instance=ExtResource( 12 )]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 960, 540 )
+position = Vector2( 960, 544 )
 frames = SubResource( 1 )
 animation = "fall_left"
 
